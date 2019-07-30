@@ -138,7 +138,7 @@ PRO getNdup,psc,sma21,sma32;,fcont1mm,fco21
 ;Given an array of PSCs, find the corresponding number of duplications from Peter's full CSV.
 ;   Also return the continuum flux at 1 mm in Jy and the CO(2-1) peak flux in Jy.
 
- t = read_csv('~/work/SAGE/1802/NESS_SMA/NESS_combined_column_table_Peter.csv',h=thdr) & t = str2arrstr(t)
+ t = read_csv('NESS_combined_column_table_Peter.csv',h=thdr) & t = str2arrstr(t)
  match2,strtrim(psc,2),strtrim(t.field01,2),a,b & ks = bsort(a) & t = t[b[ks]]
  k = where(strmatch(thdr,'*Ndup(2-1)*')) & junk = execute('sma21 = t.field'+strtrim(string(k[0]+1),2))
  k = where(strmatch(thdr,'*Ndup(3-2)*')) & junk = execute('sma32 = t.field'+strtrim(string(k[0]+1),2))
