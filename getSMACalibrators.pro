@@ -22,7 +22,7 @@ PRO makeSMACalibratorList
  print,'--------First, do the following-------'
  print,'1. Go to sma1.sma.hawaii.edu/callist/callist.html and copy the entire html table.'
  print,'2. Paste into a new document in any text editor.'
- print,'3. Remove any header lines and replace all "±" with "pm" and all "µm" with "mic".'
+ print,'3. Remove any header lines and replace all "±" with "pm".'
  print,'4. Save file as SMA_Calibrator_List_Raw.txt IN THIS FOLDER.'
  junk = '' & read,junk,prompt='When done, press enter: '
 
