@@ -2,8 +2,11 @@
 IDL scripts used to generate SMA target lists.
 NOTE: you will have to update your IDLUTILS folder with scripts from [here](http://www.sdss3.org/dr8/software/idlutils_doc.php) if you encounter errors related to the BSORT or DJS_ANGLE_MATCH modules.
 
-How to: Run the DOALL module in doall.pro.
+How to: 
+1) First, execute ```getSMAcalibrators.pro``` (perhaps in a different folder, or backup the previous output file if any). See the documentation for this script for how to, using ```doc_library, 'getSMAcalibrators'```.
+The function calls ```REPSTR```, ```FORPRINT```, ```DJS_ANGLE_MATCH```, and ```FILE_TEST```. These should be part of your regular IDL distribution or included libraries (e.g., ```astron.dir/pro/misc/forprint.pro``` and ```idlutils/pro/coord/djs_angle_match.pro```). If not, you can install those libraries by searching for them.
 
+2) Run the DOALL module in doall.pro.
 Things that (might) need updating:
 1. QA file (see existing QA sheet for format, etc.).
 
