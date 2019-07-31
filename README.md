@@ -1,5 +1,6 @@
 # NESS_SMA
 IDL scripts used to generate SMA target lists.
+NOTE: you will have to update your IDLUTILS folder with scripts from [here](http://www.sdss3.org/dr8/software/idlutils_doc.php) if you encounter errors related to the BSORT or DJS_ANGLE_MATCH modules.
 
 How to: Run the DOALL module in doall.pro.
 
