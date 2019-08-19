@@ -15,7 +15,7 @@ FUNCTION STRARRSPLIT,ARRAY,DELIMITER,EXTRACT=EXTRACT,STRUCTURE=STRUCTURE,MAX_ELE
  array2=strarr(n,m)
  for i=0l,n-1 do junk=execute('junk=strsplit(array[i],delimiter'+str+') & njunk=n_elements(junk) & if njunk gt 0 then array2[i,0:njunk-1]=junk')
  if keyword_set(structure) then begin
-  string='s={' & for i=0,m-1 do string+='col'+makestr(i+1)+':array2[*,'+makestr(i)+'],'
+  string='s={' & for i=0,m-1 do string+='col'+strtrim(string(i+1),2)+':array2[*,'+strtrim(string(i),2)+'],'
   string+='junk:0}'
   junk=execute(string)
   array2=s
