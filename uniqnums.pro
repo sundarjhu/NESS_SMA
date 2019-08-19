@@ -37,7 +37,7 @@ PRO uniqnums,invar,uniqvals,u,r,instances,noprint=noprint,sort=sort_
   if strtrim(sort_,2) eq 'asc' then ks=bsort(h) else ks=bsort(h,/rev)
   ;s=sort(h) & u=u[s] & loc=loc[s] & h=h[s]
   u=u[ks] & loc=loc[ks] & h=h[ks] ;& r=r[ks,*]
-  len1=max(strlen(invar[u])) & len2=max(strlen(makestr(h))) & len3=max(strlen(makestr(100*h/total(h)))) 
+  len1=max(strlen(invar[u])) & len2=max(strlen(strtrim(string(h),2))) & len3=max(strlen(strtrim(string(100*h/total(h)),2))) 
  endif else begin
   nu=n_elements(u) & len1=max(strlen(invar[u])) & len2=1 & len3=max(strlen(replicate(strtrim(string(100./nu),2),nu)))
  endelse
