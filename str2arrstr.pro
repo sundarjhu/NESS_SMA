@@ -23,7 +23,8 @@ FUNCTION str2arrstr,s,overwrite=overwrite,onlytags=onlytags
  junk=execute(str)
 
  for j=0l,n-1 do for i=0,ntags-1 do $
-	junk=execute("s2["+makestr(j)+"]."+tags[i]+"="+tagstr1[i]+"s."+tags[i]+"["+makestr(j)+tagstr2[i]+"]"+tagstr3[i]) 
+	junk=execute("s2["+strtrim(string(j),2)+"]."+tags[i]+$
+	"="+tagstr1[i]+"s."+tags[i]+"["+strtrim(string(j),2)+tagstr2[i]+"]"+tagstr3[i]) 
  
  if keyword_set(overwrite) then begin
   s=s2 & return,0
