@@ -1,8 +1,24 @@
 # NESS_SMA
+
+Note (2022.03.03):
+getSMACalibrators.py (notice the capital C, sorry!) is the Python version of the IDL script. Usage:
+```
+from getSMACalibrators import *
+out = getSMACalibrators(ID, RA, DEC[, radius_deg])
+```
+ID, RA, DEC are the arrays containing the unique identifiers, RAs, and DECs of your SMA targets. The `out` astropy table will contain three columns: the `ID` column that was input, and `cal_1` and `cal_2`. `cal_1` is the nearest calibrator within `radius_deg`. `cal_2` is the brightest calibrator within the same radius, only if it is different from `cal_1` (the column is otherwise masked).
+You can write this to file using
+```
+out.write('SMA_calibrators.csv', format = 'csv', overwrite = True)
+```
+See the documentation in getSMACalibrators for details.
+
+
+
 IDL scripts used to generate SMA target lists.
 NOTE: you will have to update your IDLUTILS folder with scripts from [here](http://www.sdss3.org/dr8/software/idlutils_doc.php) if you encounter errors related to the BSORT or DJS_ANGLE_MATCH modules.
 
-How to: 
+How to:
 1) First, execute ```getSMAcalibrators.pro``` (perhaps in a different folder, or backup the previous output file if any). See the documentation for this script for how to, using ```doc_library, 'getSMAcalibrators'```.
 The function calls ```REPSTR```, ```FORPRINT```, ```DJS_ANGLE_MATCH```, and ```FILE_TEST```. These should be part of your regular IDL distribution or included libraries (e.g., ```astron.dir/pro/misc/forprint.pro``` and ```idlutils/pro/coord/djs_angle_match.pro```). If not, you can install those libraries by searching for them.
 
