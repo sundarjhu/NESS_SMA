@@ -5,7 +5,7 @@
     Common Name, Source Name, RAJ2000, DEJ2000, Band, Last Obs. Date, Obs., Flux Density (Jy) 30.0 day avg, Light curves
 3. Find all instances of ± and replace with \pm.
 4. Find all instances of mi and replace with mi.
-4. Save as SMA_Calibrator_List_Raw.csv.
+5. Save as SMA_Calibrator_List_Raw.csv.
 """
 
 from astropy.table import Table, hstack, MaskedColumn, join, join_skycoord
