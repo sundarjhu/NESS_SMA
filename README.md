@@ -1,7 +1,19 @@
 # NESS_SMA
 
 Note (2022.03.03):
-getSMACalibrators.py (notice the capital C, sorry!) is the Python version of the IDL script. Usage:
+getSMACalibrators.py (notice the capital C, sorry!) is the Python version of the IDL script. 
+Usage:
+First, follow these instructions to generate the raw calibrator file from the SMA website:
+```
+1. Go to sma1.sma.hawaii.edu/callist/callist.html and copy the entire html table into a CSV file using
+    some utility like the CopyTables extension for Firefox.
+2. Open up the CSV and change the headers so there's one name per column. The ones I chose are:
+    Common Name, Source Name, RAJ2000, DEJ2000, Band, Last Obs. Date, Obs., Flux Density (Jy) 30.0 day avg, Light curves
+3. Find all instances of ± and replace with \pm.
+4. Find all instances of mi and replace with mi.
+5. Save as SMA_Calibrator_List_Raw.csv.
+```
+Once this is done:
 ```
 from getSMACalibrators import *
 out = getSMACalibrators(ID, RA, DEC[, radius_deg])
